@@ -1,7 +1,7 @@
 # Basic Web Interface linking with a Python Script
 
 ## Explanation step by step
-(Gnyanhub.com)[]
+(Gnyanhub.com)[http://gnyanhub.com/linking-a-python-script-to-a-web-interface-with-file-upload/]
 ## Python Script
 
 Navigate to scripts folder and run the following command.  
