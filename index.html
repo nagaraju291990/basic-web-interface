@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<title>
+			A Web Interface
+		</title>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="js/FileSaver.js"></script>
+		<script type="text/javascript" src="js/validation.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+		<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/convert.js" ></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		 <meta charset='utf-8'>
+	</head>
+	<body>
+		<div>
+
+				<h4 align="center">Convert Upper case to LowerCase </h4>
+			<!--common for file and text output-->
+			<!--upload form-->
+			<form class="form-inline" id="upload" method="post" enctype="multipart/form-data">
+
+				<div class="form-group col-12 col-m-12">
+					
+					<label class="btn btn-primary" for="my-file-selector">
+
+						<!--<input accept=".doc,.rtf,.docx,.pdf,text/plain" type="file" id="file" name="inputfile" multiple/>-->
+						<input accept=".pdf,text/plain,.doc" type="file" id="file" name="inputfile" onchange="startRead(this)" multiple  multiple/>
+					</label>
+
+					<!--<button type="button" class="form-control btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Select Business type <span class="caret"></span>
+					</button>-->
+				<!--	<span id="mandatory">*</span> <select name="srclanguage"  id="srclanguage" class="form-control"><option value="" >Choose Type</option>
+						<option disabled="true"></option>
+				</select>-->
+
+					<button id="submit" type="button" class="btn btn-default navbar-btn" onclick="submittext();">
+						Submit
+					</button>
+					<img style="margin-left:2%;height:4%;position:relative;" id="loading" src="images/processing.gif"></img>
+					<br>
+			<textarea id="input"></textarea> 
+			<textarea id="result"></textarea> 
+					<button id="edit" type="button" class="btn btn-default navbar-btn" onclick="edittext();">
+						Edit
+					</button>
+					<br>
+					<button id="sample1" type="button" class="btn btn-default navbar-btn sample" onclick="sample(this.id);">
+						Sample1
+					</button>
+					<button id="sample2" type="button" class="btn btn-default navbar-btn sample" onclick="sample(this.id);">
+						Sample2
+					</button>
+					<button id="sample3" type="button" class="btn btn-default navbar-btn sample" onclick="sample(this.id)">
+						Sample3
+					</button>
+					<button id="clear" type="button" class="btn btn-default navbar-btn" onclick="empty();">
+						clear
+					</button>
+					<select style="background-color:#7ba733;color:#fff;" name="savetype"  id="savetype" class="form-control"><option value="" >Export to</option>
+						<option disabled="true"></option>
+						<option value="txt">.txt </option>
+						<option value="csv">.csv </option>
+						<option value="doc">.doc</option>
+						<option value="rtf">.rtf</option>
+						<option value="pdf">.pdf</option>
+					</select>
+
+					<button id="download" type="button" disabled class="btn btn-default navbar-btn" onclick="saveasfile();">
+						Download
+					</button>
+
+				</div> <!-- end of form group div -->
+
+			</form>
+
+
+			<div class="progressbar">
+				<div class="bar">
+				</div>
+
+			</div> <!-- end of progressbar div-->
+
+			<!--<div contenteditable="true" id="result"></div>--> <!-- end of result div-->
+			<!--			<textarea onkeypress="txtAreaId(this.id);" id="result-text"></textarea> -->
+
+		</div>	<!-- end of container div -->
+	</body>
+</html>
